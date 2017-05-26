@@ -1,0 +1,8 @@
+<odoo>
+    
+    <!--Set Default type product Service when create-->
+    <record id="website_sale.product_template_action" model="ir.actions.act_window">
+        <field name="context">{'search_default_published': 1, 'default_website_published': True, 'default_type': 'service'}</field>
+    </record>
+    
+</odoo>

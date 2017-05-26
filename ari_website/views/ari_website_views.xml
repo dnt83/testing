@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <!--Define menu, action, views... backend setting website-->
+        
+        <!--<menuitem name='Website Backend' id='menu_ariwebsitebackend' sequence="10"/>-->
+        <menuitem name='Website' id='menu_ariwebsiteadmin_website' parent='website.menu_website_configuration' sequence="0"/>
+        <!--<menuitem name='Configuration' id='menu_ariwebsitebackend_configuration' parent='menu_ariwebsitebackend' sequence="20"/>-->
+        
+        <!--Blog-->
+        <!-- page action -->
+        <record model="ir.actions.act_window" id="action_ari_blog_post">
+            <field name="name">Contents</field>
+            <field name="res_model">blog.post</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="menu_ari_content" parent="menu_ariwebsiteadmin_website" name="Content" action="action_ari_blog_post" sequence="5"/>
+
+        <record model="ir.actions.act_window" id="action_ari_blog_blog">
+            <field name="name">Content Category</field>
+            <field name="res_model">blog.blog</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="menu_ari_content_category" parent="menu_ariwebsiteadmin_website" name="Content Category" action="action_ari_blog_blog" sequence="10"/>
+        
+        <!-- Inherit add new singlePost to blog -->
+        <record model="ir.ui.view" id="view_blog_blog_arywebsite_inherit_form">
+            <field name="name">blog.blog.arywebsite.inherit.form</field>
+            <field name="model">blog.blog</field>
+            <field name="inherit_id" ref="website_blog.view_blog_blog_form"/>
+            <field name="arch" type="xml">
+                <field name="name" position='before'>
+                    <field name='code'/>
+                </field>
+                <field name="name" position='after'>
+                    <field name="singleBlogPost"/>
+                </field>
+                <field name="subtitle" position="after">
+                        <field name="jumbo_select"/>
+                        <label for="jumbo_conent"/>
+                        <div attrs="{'invisible': [('jumbo_select', '!=', 'custom')]}"  class="oe_inline">
+                            <field name="jumbo_conent" widget="text_ckeditor4"/>
+                        </div>
+                </field>
+            </field>
+        </record>
+        
+        <!-- Inherit website blog post -->
+        <record model="ir.ui.view" id="arilogistic_post_form">
+			<field name="name">arilogistics.post.form</field>
+			<field name="model">blog.post</field>
+			<field name="priority" eval="5"/>
+			<field name="arch" type="xml">
+				<form string="ARI Logistics Posts">
+    				<group colspan="4" col="4">
+    				    <button class="oe_stat_button" name="website_publish_button"
+                            type="object" icon="fa-globe" colspan="4">
+    					    <field name="website_published" widget="website_button" groups="ari_website.group_blog_post_publish"/>
+    					 </button>
+    					<field name="blog_id" string="Blog category"/>
+    					<field name="name" string="Title"/>
+    					<field name="subtitle" string="Subtitle"/>
+    					<field name="author_id" string="Author"/>
+    					<field name="tag_ids" widget="many2many_tags" placeholder="Tags..." />
+    					<field name="summary"/>
+              			<field name="content" widget="text_ckeditor4" colspan="4"/>
+    				</group>
+				</form>
+			</field>
+		</record>
+		
+		<!--Page History-->
+		<!-- History Action  -->
+  <!--      <record model="ir.actions.act_window" id="ari_action_history">-->
+  <!--          <field name="name">Page history</field>-->
+  <!--          <field name="res_model">blog.post.history</field>-->
+  <!--          <field name="view_type">form</field>-->
+  <!--          <field name="view_mode">tree,form</field>-->
+  <!--      </record>-->
+  <!--      <menuitem id="menu_ari_website_page_history" parent="menu_ariwebsitebackend_configuration" name="Pages history" action="ari_action_history" sequence="30" groups="base.group_no_one"/>-->
+		
+		<!--Blog Tag-->
+		<record model="ir.actions.act_window" id="ari_action_tags">
+            <field name="name">Content Tags</field>
+            <field name="res_model">blog.tag</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,graph</field>
+            <field name="view_id" ref="website_blog.blog_tag_tree"/>
+        </record>
+        <menuitem id="menu_ari_website_tag" parent="menu_ariwebsiteadmin_website" name="Content Tags" action="ari_action_tags" sequence="40"/>
+        
+        <!-- Website Menu Area -->
+        <record id="ari_website_menu_tree" model="ir.ui.view">
+            <field name="name">website.menu.tree</field>
+            <field name="model">website.menu</field>
+            <field name="field_parent">child_id</field>
+            <field name="priority" eval="5"/>
+            <field name="arch" type="xml">
+                <tree string="Website menu" editable="top">
+                    <field name="full_name"/>
+                    <field name="name"/>
+                    <field name="manualUrl"/>
+                    <field name="url"/>
+                    <field name="new_window"/>
+                    <field name="parent_id"/>
+                    <field name="sequence"/>
+                    <field name='blog_id'/>
+                    <field name='active'/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="action_ari_website_menu" model="ir.actions.act_window">
+            <field name="name">Website Menu</field>
+            <field name="res_model">website.menu</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <field name="context">{'set_default_active':1}</field>
+        </record>
+        <menuitem name='Website Menu' id='menu_ariwebsitebackend_configuration_menu' parent='website.menu_website_global_configuration' sequence="5" action='action_ari_website_menu'/>
+         
+        <!--End of Website menu-->
+    
+    </data>
+</openerp>

@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+    	
+    	<template id="show_under_construction" name="Show Under Construction">
+    		<div class="container">
+	            <div class="alert alert-danger mt16" role="alert">
+	                <strong>Our website is underconstruction! Please check back regurlarly!</strong>
+	                <h1>ARI Logistics commits providing professional logistics services. Customer satisfaction is the key to our success</h1>
+	            </div>
+			</div>
+    	</template>
+    	
+        <template id="under_construction" inherit_id="website.layout" name="Under Construction">
+	        <xpath expr="//div[@id='wrapwrap']/header" position="attributes">
+	            <attribute name="id">my_header</attribute>
+	        </xpath>
+	        
+	        <!--<xpath expr="//div[@id='wrapwrap']/header/div" position="after">-->
+	        <!--    <t t-call="ari_website.show_under_construction" />-->
+	        <!--</xpath>-->
+    	</template>
+
+		
+		<!-- About us pages: post -->
+		<template id="ari_website.intro" name="Show Intro">
+			<t t-call="website.layout" />
+		</template>
+		
+    </data>
+</odoo>

@@ -1,0 +1,41 @@
+<odoo>
+    <data noupdate='0'>
+        <!-- Product Public Category -->
+        <record id="ari_product_pub_cat_logistics_services" model="product.public.category">
+            <field name="name">ARI Logistics Services</field>
+            <field name="sequence">5</field>
+        </record>
+        
+        <record id="ari_product_pub_cat_transportation_service" model="product.public.category">
+            <field name="name">Transportation Service</field>
+            <field name='parent_id' ref="ari_product_pub_cat_logistics_services"/>
+            <field name="sequence">5</field>
+        </record>
+        
+        <record id="ari_product_pub_cat_clearance_service" model="product.public.category">
+            <field name="name">Clearance Service</field>
+            <field name='parent_id' ref="ari_product_pub_cat_logistics_services"/>
+            <field name="sequence">10</field>
+        </record>
+        
+        <record id="ari_product_pub_cat_receive_dispatching_service" model="product.public.category">
+            <field name="name">Receiving and Dispatching Goods Service</field>
+            <field name='parent_id' ref="ari_product_pub_cat_logistics_services"/>
+            <field name="sequence">15</field>
+        </record>
+        
+        <record id="ari_product_pub_cat_cargo_insurance_service" model="product.public.category">
+            <field name="name">Cargo Insurance Service</field>
+            <field name='parent_id' ref="ari_product_pub_cat_logistics_services"/>
+            <field name="sequence">20</field>
+        </record>
+        
+        <record id="ari_product_pub_cat_other_service" model="product.public.category">
+            <field name="name">Other Services</field>
+            <field name='parent_id' ref="ari_product_pub_cat_logistics_services"/>
+            <field name="sequence">25</field>
+        </record>
+        
+        <!-- Product Product -->
+    </data>
+</odoo>

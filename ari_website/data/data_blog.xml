@@ -1,0 +1,45 @@
+<openerp>
+    <data noupdate="0">
+        <!--About US-->
+        <record id="ari_website.blog_category_our_vision" model="blog.blog">
+            <field name="name">Our Vision</field>
+            <field name="code">ourvision</field>
+            <field name="singleBlogPost">True</field>
+        </record>
+        
+        <record id="ari_website.blog_category_brand_value" model="blog.blog">
+            <field name="name">Brand Value</field>
+            <field name="code">brandvalue</field>
+            <field name="singleBlogPost">True</field>
+        </record>
+        
+        <record id="ari_website.blog_category_contact_detail" model="blog.blog">
+            <field name="name">Contact Detail</field>
+            <field name="code">contactdetail</field>
+            <field name="singleBlogPost">True</field>
+        </record>
+        
+        <record id="ari_website.blog_category_staff_management" model="blog.blog">
+            <field name="name">Staff and Management</field>
+            <field name="code">staffmanagement</field>
+            <field name="singleBlogPost">True</field>
+        </record>
+        
+        <!--Our Commitment-->
+        <record id="ari_website.blog_category_expertise" model="blog.blog">
+            <field name="name">Expertise</field>
+            <field name="code">expertise</field>
+            <field name="singleBlogPost">True</field>
+        </record>
+        <record id="ari_website.blog_category_equipment" model="blog.blog">
+            <field name="name">Equipment</field>
+            <field name="code">equipment</field>
+            <field name="singleBlogPost">True</field>
+        </record>
+        <record id="ari_website.blog_category_health_safety" model="blog.blog">
+            <field name="name">Health and Safety</field>
+            <field name="code">healthsafety</field>
+            <field name="singleBlogPost">True</field>
+        </record>
+    </data>
+</openerp>

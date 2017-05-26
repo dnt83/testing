@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+        <record id="view_ari_website_config_settings" model="ir.ui.view">
+            <field name="name">ARI Website settings</field>
+            <field name="model">website.config.settings</field>
+            <field name='inherit_id' ref='website_sale.website_config_settings_view_form'/>
+            <field name="arch" type="xml">
+                <group name="delivery" position='before'>
+                    <group string="ARI Website">
+                        <!--<label for="default_route_intro"/>-->
+                        <!--    <div name="default_route_intro">-->
+                        <!--        <div>-->
+                        <!--            <div name="default_route_intro" class="oe_inline">-->
+                        <!--                <field name="default_route_intro"/>-->
+                        <!--            </div>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <label for="post_per_page"/>
+                            <div name="post_per_page">
+                                <div>
+                                    <div name="post_per_page" class="oe_inline">
+                                        <field name="post_per_page"/>
+                                    </div>
+                                </div>
+                            </div>
+                    </group>
+                </group>
+            </field>
+        </record>
+
+</odoo>

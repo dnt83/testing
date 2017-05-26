@@ -1,0 +1,113 @@
+<odoo>
+    <data noupdate="0">
+        
+        <!--About Us Menu Area -->
+        <record id="ari_website.menu_aboutus" model="website.menu">
+            <field name="name">About Us</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">10</field>
+            <field name='active'>True</field>
+            <field name="website_id" ref="website.default_website"/>
+        </record>
+        
+        <record id="ari_website.menu_aboutus_vision" model="website.menu">
+            <field name="name">Our Vision</field>
+            <field name="parent_id" ref="ari_website.menu_aboutus"/>
+            <field name="sequence" type="int">5</field>
+            <field name='blog_id' ref="ari_website.blog_category_our_vision"/>
+            <field name='active'>True</field>
+            <field name="website_id" ref="website.default_website"/>
+        </record>
+        
+        <record id="ari_website.menu_aboutus_brandvalue" model="website.menu">
+            <field name="name">Brand Value</field>
+            <field name="parent_id" ref="ari_website.menu_aboutus"/>
+            <field name='blog_id' ref="ari_website.blog_category_brand_value"/>
+            <field name="sequence" type="int">10</field>
+            <field name='active'>True</field>
+            <field name="website_id" ref="website.default_website"/>
+        </record>
+        
+        <record id="ari_website.menu_aboutus_contactdetail" model="website.menu">
+            <field name="name">Contact Detail</field>
+            <field name="parent_id" ref="ari_website.menu_aboutus"/>
+            <field name='blog_id' ref="ari_website.blog_category_contact_detail"/>
+            <field name="sequence" type="int">15</field>
+            <field name='active'>True</field>
+            <field name="website_id" ref="website.default_website"/>
+        </record>
+        
+        <record id="ari_website.menu_aboutus_staff_management" model="website.menu">
+            <field name="name">Staff and Management</field>
+            <field name="parent_id" ref="ari_website.menu_aboutus"/>
+            <field name='blog_id' ref="ari_website.blog_category_staff_management"/>
+            <field name="sequence" type="int">20</field>
+            <field name='active'>True</field>
+            <field name="website_id" ref="website.default_website"/>
+        </record>
+        <!--End of About Us Menu -->
+        
+        <!-- Our Serives -->
+        <record id="ari_website.menu_services" model="website.menu">
+            <field name="name">Our Services</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">15</field>
+            <field name='active'>True</field>
+            <field name="manualUrl">/shop</field>
+            <field name="website_id" ref="website.default_website"/>
+        </record>
+        <!--<record id="ari_website.menu_services_product" model="website.menu">-->
+        <!--    <field name="name">Product Catgories</field>-->
+        <!--    <field name="parent_id" ref="ari_website.menu_services"/>-->
+        <!--    <field name="sequence" type="int">5</field>-->
+        <!--    <field name="manualUrl">/shop</field>-->
+        <!--    <field name='active'>True</field>-->
+        <!--    <field name="website_id" ref="website.default_website"/>-->
+        <!--</record>-->
+        <!--End of Our Serives -->
+        
+        <!-- Our Commitment -->
+        <record id="ari_website.menu_commitment" model="website.menu">
+            <field name="name">Our Commitment</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">20</field>
+            <field name='active'>True</field>
+            <field name="website_id" ref="website.default_website"/>
+        </record>
+        <record id="ari_website.menu_commitment_expertise" model="website.menu">
+            <field name="name">Expertise</field>
+            <field name="parent_id" ref="ari_website.menu_commitment"/>
+            <field name='blog_id' ref="ari_website.blog_category_expertise"/>
+            <field name="sequence" type="int">5</field>
+            <field name='active'>True</field>
+            <field name="website_id" ref="website.default_website"/>
+        </record>
+         <record id="ari_website.menu_commitment_equipment" model="website.menu">
+            <field name="name">Equipment</field>
+            <field name="parent_id" ref="ari_website.menu_commitment"/>
+            <field name='blog_id' ref="ari_website.blog_category_equipment"/>
+            <field name="sequence" type="int">10</field>
+            <field name='active'>True</field>
+            <field name="website_id" ref="website.default_website"/>
+        </record>
+         <record id="ari_website.menu_commitment_health_safety" model="website.menu">
+            <field name="name">Health and Safety</field>
+            <field name="parent_id" ref="ari_website.menu_commitment"/>
+            <field name='blog_id' ref="ari_website.blog_category_health_safety"/>
+            <field name="sequence" type="int">15</field>
+            <field name='active'>True</field>
+            <field name="website_id" ref="website.default_website"/>
+        </record>
+        <!-- End Of Our Commitment -->
+        
+        <!-- Login -->
+        <!--<record id="ari_website.menu_login" model="website.menu">-->
+        <!--    <field name="name">Login</field>-->
+        <!--    <field name="url">/</field>-->
+        <!--    <field name="parent_id" ref="website.main_menu"/>-->
+        <!--    <field name="sequence" type="int">20</field>-->
+        <!--    <field name='active'>True</field>-->
+        <!--</record>-->
+   
+    </data>
+</odoo>

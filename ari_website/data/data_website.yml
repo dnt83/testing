@@ -1,0 +1,32 @@
+-
+  Change website name and Menu
+-
+  !python {model: website, id: website.default_website}: |
+    #If have default_website change website name
+    import base64
+    vals= {'name': 'ARI Logistics'}
+    from odoo.modules import get_module_resource
+    img_path = get_module_resource('ari_website', 'static/src/img', 'favicon.ico')
+    with open(img_path) as image_file:
+      encoded_string = base64.b64encode(image_file.read())
+      vals['favicon'] = encoded_string
+    self.write(vals)
+-    
+  !python {model: website.menu, id: website.main_menu}: |  
+    self.write({'active': True})
+    
+-
+  !python {model: res.partner, id: base.main_partner}: |
+    self.write({'name':'ARI Logistics',
+                'phone': '+844 3699 2555',
+                'fax': '+844 3699 2569',
+                'mobile': '+84 988 750 246',
+                'email': 'info@arilogistics.vn',
+                'street': 'Room 705, 7th flr., T4 buildings, CT18, Viethung square, Long bien dist.',
+                'city': 'Hanoi',
+                'country_id': self.env['res.country'].search([('name','=','Vietnam')], limit=1).id,
+                'website': 'http://arilogistics.vn'
+    })
+-
+  !python {model: res.company, id: base.main_company}: |
+    self.write({'rml_header1':'Customer satisfaction is the key to our success'})
