@@ -1,15 +1,11 @@
 import werkzeug
-import werkzeug.urls
-
-import mimetypes
-import odoo
 
 from odoo import http, fields, SUPERUSER_ID, _
 
 from odoo.http import request
 
 from dateutil.relativedelta import relativedelta
-from datetime import datetime, timedelta
+from datetime import datetime
 from odoo import tools
 
 #from odoo.addons.website_crm.controllers.main import contactus

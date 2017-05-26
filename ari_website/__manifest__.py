@@ -12,7 +12,6 @@
     'website': "",
 
     # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/master/openerp/addons/base/module/module_data.xml
     # for the full list
     'category': 'Ari Website',
     'version': '0.1',
